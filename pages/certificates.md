@@ -1,2 +1,3 @@
 # 🥇 Certificates
-- Certified Public Accountant (Taiwan)
+
+- Certified Public Accountant (United States)
