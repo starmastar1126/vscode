@@ -26,9 +26,9 @@
     <a href="https://github.com/starmastar1126/vscode/blob/main/README.md"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://starmastar1126.github.io/">View Demo</a>
+    <a href="https://starmastar1126.github.io/vscode">View Demo</a>
     ·
-    <a href="https://starmastar1126.github.io/#/docs">Markdown prview</a>
+    <a href="https://starmastar1126.github.io/vscode/#/docs">Markdown prview</a>
     ·
     <a href="https://github.com/starmastar1126/vscode/issues">Report Bug</a>
   </p>
@@ -67,7 +67,7 @@
 
 <!-- [![Product Name Screen Shot][product-screenshot]](https://starmastar1126.github.io/) -->
 
-The project is inspired by [Visual Studio Code](https://github.com/microsoft/vscode) and [caglarturali.github.io](https://github.com/caglarturali/caglarturali.github.io). The pages of the portfolio are powered by `markdown`, which make them easy to modify or add your own contents.
+The project is inspired by [Visual Studio Code](https://github.com/microsoft/vscode) and [starmastar1126.github.io](https://github.com/starmastar1126/starmastar1126.github.io/vscode). The pages of the portfolio are powered by `markdown`, which make them easy to modify or add your own contents.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -108,6 +108,7 @@ The project is inspired by [Visual Studio Code](https://github.com/microsoft/vsc
       { index: 4, name: 'projects.md', route: '/projects' },  
       { index: 5, name: 'certificates.md', route: '/certificates' },
       { index: 6, name: 'accomplishments.md', route: '/accomplishments' },
+      { index: 7, name: 'languages.md', route: '/languages' },
     ];
     ```
 6. Add your social links in `src/app/pages/link.tsx`, which will appear in both sidebar and homepage.
@@ -150,7 +151,7 @@ docker-compose up
 ## Demonstration
 
 - The project is deployed to following two domains, and they are in synchronization.
-  - user site: [https://starmastar1126.github.io/](https://starmastar1126.github.io/)
+  - user site: [https://starmastar1126.github.io/vscode](https://starmastar1126.github.io/vscode)
   - project site: [https://starmastar1126.github.io/vscode/](https://starmastar1126.github.io/vscode/)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -169,7 +170,7 @@ docker-compose up
 - Google Analytics supported
 - Auto-deploy to gh-pages with github actions ready
 
-Markdown preview: https://starmastar1126.github.io/#/docs
+Markdown preview: https://starmastar1126.github.io/vscode/#/docs
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -185,7 +186,7 @@ Distributed under the MIT License. See `LICENSE.md` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Silas Jones - [Personal Portfolio](https://starmastar1126.github.io/) - starmastar1126@gmail.com
+Silas Jones - [Personal Portfolio](https://starmastar1126.github.io/vscode) - starmastar1126@gmail.com
 
 Project Link: [https://github.com/starmastar1126/vscode](https://github.com/starmastar1126/vscode)
 
@@ -199,7 +200,6 @@ Project Link: [https://github.com/starmastar1126/vscode](https://github.com/star
 * [Img Shields](https://shields.io)
 * [GitHub Pages](https://pages.github.com)
 * [React Icons](https://react-icons.github.io/react-icons/search)
-* [caglarturali.github.io](https://github.com/caglarturali/caglarturali.github.io)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -214,9 +214,9 @@ Project Link: [https://github.com/starmastar1126/vscode](https://github.com/star
 [license-shield]: https://img.shields.io/github/license/starmastar1126/vscode
 [license-url]: https://github.com/starmastar1126/vscode/blob/master/LICENSE.md
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat&logo=linkedin&colorB=555
-[linkedin-url]: https://www.linkedin.com/in/yan-ying-liao/
+[linkedin-url]: https://www.linkedin.com/in/starownar1126/
 [product-screenshot]: ./src/static/screenshot.gif
 [gh-pages-shield]: https://img.shields.io/github/deployments/starmastar1126/starmastar1126.github.io/github-pages
 [gh-pages-url]: https://github.com/starmastar1126/starmastar1126.github.io/deployments
 [website-shield]:https://img.shields.io/website?url=https%3A%2F%2Fstarmastar1126.github.io%2F
-[website-url]: https://starmastar1126.github.io/
+[website-url]: https://starmastar1126.github.io/vscode
