@@ -7,18 +7,22 @@ import {
   Stack,
   ThemeProvider,
   Typography,
-} from "@mui/material";
-import { useEffect, useState } from "react";
-import AppTree from "./AppTree";
-import Footer from "./Footer";
-import Sidebar from "./Sidebar";
-import { Routes, Route, useNavigate, Navigate } from "react-router-dom";
-import AppButtons from "./AppButtons";
-import MDContainer from "../components/MDContainer";
-import Home from "../pages/Home";
-import { pages } from "../pages/pages";
-import usePageTracking from "../hooks/usePageTracking";
-import { isBrowser } from "react-device-detect";
+} from '@mui/material';
+import { useEffect, useState } from 'react';
+import { Routes, Route, useNavigate, Navigate } from 'react-router-dom';
+import { isBrowser } from 'react-device-detect';
+
+import AppTree from './AppTree';
+import Sidebar from './Sidebar';
+import Footer from './Footer';
+import AppButtons from './AppButtons';
+
+import MDContainer from '../components/MDContainer';
+
+import Home from '../pages/Home';
+import { pages } from '../pages/Pages';
+
+import usePageTracking from '../hooks/usePageTracking';
 
 interface Page {
   index: number;
@@ -40,7 +44,7 @@ export default function App() {
   const navigate = useNavigate();
   const [expanded, setExpanded] = useState(isBrowser);
   const [selectedIndex, setSelectedIndex] = useState(-1);
-  const [currentComponent, setCurrentComponent] = useState("");
+  const [currentComponent, setCurrentComponent] = useState('');
   const [visiblePageIndexs, setVisiblePageIndexs] = useState(
     initVisiblePageIndexs(pages)
   );
@@ -48,25 +52,25 @@ export default function App() {
   const [visiblePages, setVisiblePages] = useState(
     pages.filter((x) => x.visible)
   );
-  const paletteType = darkMode ? "dark" : "light";
+  const paletteType = darkMode ? 'dark' : 'light';
   usePageTracking();
   const theme = createTheme({
     palette: {
       mode: paletteType,
       background: {
-        default: paletteType === "light" ? "#FFFFFF" : "#1e1e1e",
+        default: paletteType === 'light' ? '#FFFFFF' : '#1e1e1e',
       },
     },
     components: {
       MuiCssBaseline: {
         styleOverrides: {
-          body: paletteType === "dark" ? darkScrollbar() : null,
+          body: paletteType === 'dark' ? darkScrollbar() : null,
         },
       },
       MuiDivider: {
         styleOverrides: {
           root: {
-            borderColor: "rgba(255, 255, 255, 0.12)",
+            borderColor: 'rgba(255, 255, 255, 0.12)',
           },
         },
       },
@@ -75,13 +79,13 @@ export default function App() {
 
   function handleThemeChange() {
     setDarkMode(!darkMode);
-    localStorage.setItem("theme", darkMode ? "light" : "dark");
-  }
+    localStorage.setItem('theme', darkMode ? 'light' : 'dark');
+  };
 
   useEffect(() => {
-    const currentTheme = localStorage.getItem("theme");
+    const currentTheme = localStorage.getItem('theme');
     if (!currentTheme) setDarkMode(true);
-    else setDarkMode(currentTheme === "dark");
+    else setDarkMode(currentTheme === 'dark');
   }, []);
 
   const deletedIndex = visiblePages.find(
@@ -99,7 +103,7 @@ export default function App() {
 
     if (visiblePageIndexs.length === 0) {
       setSelectedIndex(-1);
-      navigate("/");
+      navigate('/');
     } else if (
       deletedIndex === selectedIndex &&
       deletedIndex > Math.max(...visiblePageIndexs)
@@ -119,19 +123,20 @@ export default function App() {
       );
       if (page) navigate(page.route);
     } else {
-    }
+
+    };
   }, [visiblePageIndexs, navigate, deletedIndex, selectedIndex]);
 
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline enableColorScheme />
       <Container
-        sx={{ m: 0, p: 0, overflowY: "hidden" }}
+        sx={{ m: 0, p: 0, overflowY: 'hidden' }}
         maxWidth={false}
         disableGutters
       >
-        <Grid container sx={{ overflow: "auto", overflowY: "hidden" }}>
-          <Grid container sx={{ overflow: "auto" }}>
+        <Grid container sx={{ overflow: 'auto', overflowY: 'hidden' }}>
+          <Grid container sx={{ overflow: 'auto' }}>
             <Grid item sx={{ width: 50 }}>
               <Sidebar
                 setExpanded={setExpanded}
@@ -145,14 +150,14 @@ export default function App() {
               <Grid
                 item
                 sx={{
-                  backgroundColor: darkMode ? "#252527" : "#f3f3f3",
+                  backgroundColor: darkMode ? '#252527' : '#f3f3f3',
                   width: 220,
                 }}
               >
                 <Stack sx={{ mt: 1 }}>
                   <Typography
-                    variant="caption"
-                    color="text.secondary"
+                    variant='caption'
+                    color='text.secondary'
                     sx={{ ml: 4 }}
                   >
                     EXPLORER
@@ -173,11 +178,10 @@ export default function App() {
             <Grid item xs zeroMinWidth>
               <Grid
                 sx={{
-                  height: "33px",
+                  height: '33px',
                 }}
               >
                 <AppButtons
-                  // pages={pages}
                   pages={visiblePages}
                   selectedIndex={selectedIndex}
                   setSelectedIndex={setSelectedIndex}
@@ -190,15 +194,14 @@ export default function App() {
 
               <Grid
                 sx={{
-                  scrollBehavior: "smooth",
-                  // overflow: 'scroll',
-                  overflowY: "auto",
+                  scrollBehavior: 'smooth',
+                  overflowY: 'auto',
                   height: `calc(100vh - 20px - 33px)`,
                 }}
               >
                 <Routes>
                   <Route
-                    path="/"
+                    path='/'
                     element={<Home setSelectedIndex={setSelectedIndex} />}
                   />
                   {pages.map(({ index, name, route }) => (
@@ -209,10 +212,10 @@ export default function App() {
                     />
                   ))}
                   <Route
-                    path="/docs"
+                    path='/docs'
                     element={<MDContainer path={`./pages/docs.md`} />}
                   />
-                  <Route path="*" element={<Navigate to="/" replace />} />
+                  <Route path='*' element={<Navigate to='/' replace />} />
                 </Routes>
               </Grid>
             </Grid>
@@ -222,7 +225,6 @@ export default function App() {
           </Grid>
         </Grid>
       </Container>
-      {/* </Router> */}
     </ThemeProvider>
   );
 }

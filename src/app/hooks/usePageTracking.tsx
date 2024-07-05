@@ -13,7 +13,7 @@ const usePageTracking = () => {
     ) {
       ReactGA.initialize(process.env.REACT_APP_MEASUREMENT_ID);
       setInitialized(true);
-    }
+    };
   }, []);
 
   useEffect(() => {
@@ -22,7 +22,7 @@ const usePageTracking = () => {
         hitType: 'pageview',
         page: location.pathname + location.search,
       });
-    }
+    };
   }, [initialized, location]);
 };
 
